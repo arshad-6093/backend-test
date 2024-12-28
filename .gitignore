@@ -1,0 +1,8 @@
+# Cabal build files
+dist-newstyle/
+
+
+*.hi
+*.o
+*.dyn_o
+*.log

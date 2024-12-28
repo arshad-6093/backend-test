@@ -1,0 +1,57 @@
+cabal-version:       3.0
+
+-- **Package Metadata**
+name:                backend-test
+version:             0.1.0.0
+synopsis:            A backend server example using Haskell.
+description:         A server implementing caching and API forwarding using Haskell.
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              Mohammed Arshath
+maintainer:          arshad.kaleelrahman@gmail.com
+category:            Web
+build-type:          Simple
+
+-- **Documentation and Extra Files**
+extra-doc-files:     CHANGELOG.md
+-- extra-source-files:
+
+-- **Common GHC Options**
+common warnings
+    ghc-options: -Wall
+
+-- **Executable Configuration**
+executable backend-test
+    -- Import common warning flags.
+    import:            warnings
+
+    -- Main entry point
+    main-is:           Main.hs
+
+    -- Library dependencies
+    build-depends:     
+                        -- Base
+                        base ^>=4.17.2.1,
+                        -- JSON parsing
+                        aeson,
+                        bytestring,
+                        -- Concurrent data structures
+                        stm,
+                        -- Containers
+                        containers,
+                        -- HTTP client/server
+                        http-client,
+                        http-conduit,
+                        servant-server,
+                        warp,
+                        -- time manipulation
+                        time
+
+    -- Source directories
+    hs-source-dirs:    app
+
+    -- Haskell language version
+    default-language:  Haskell2010
+
+    -- GHC-specific options
+    ghc-options:       -threaded
